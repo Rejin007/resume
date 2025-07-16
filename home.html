@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        .home1{
+            background-image: linear-gradient(to right, #000000, #1f0128);
+            color: #ffffff;
+            min-width: 100%;
+            /* max-width: 90%; */
+        }
+        .textalign{
+            text-align: center;
+        }
+        .nav{
+            position: fixed;
+            width: 100%;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #0e0113;
+            font-size: 20px;
+            padding: 30px 0px;
+        }
+        .nav2{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .nav1{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .nav1:hover{
+            text-decoration-line: underline;
+            color: #1a75ff ;
+        }
+        .about{
+            display: grid;
+            padding: 5% 10%;
+        }
+        .display{
+            display: grid;
+            gap: 30px;
+        }
+        .fontsize{
+            font-size: 25px;
+            color: #ffffff;
+        }
+        .about1{
+            grid-column: 2;
+            grid-row: 1 /span 2;
+            margin-top: 100px;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        /* Rotating border using a pseudo-element */
+        .image-wrapper::before {
+            content: "  ";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 410px;
+            height: 410px;
+            border-radius: 50%;
+            background: linear-gradient(rgb(0, 255, 38), transparent, rgb(0, 81, 255));
+            /* background: linear-gradient(rgb(255, 255, 255), transparent, rgb(174, 0, 255)); */
+
+            animation: rotateShadow 5s linear infinite;
+        }
+
+        @keyframes rotateShadow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .about2{
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .btn{
+            padding: 2% 5% ;
+            background: linear-gradient(27deg,rgba(150, 5, 141, 1) 18%, rgba(116, 17, 214, 1) 100%);
+            border-radius: 20%;
+            margin-left: 10%;
+            font-size: 25px;
+        }
+        .btn:hover{
+            background: linear-gradient(27deg, rgba(116, 17, 214, 1),rgba(150, 5, 141, 1) 68% 100%);
+        }
+        .skill1{
+            padding: 3%;
+            grid-column: 1;
+            grid-row: 2;
+            font-size: 18px;
+            margin-left: 30%;
+            margin-top: 10%;
+            max-width: 60%;
+            min-width: 60%;
+            text-overflow:nowrap;
+        }
+        .skill2{
+            padding: 3%;
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 18px;
+            margin-right: 30%;
+            margin-top: 11%;
+            max-width: 60%;
+            min-width: 60%;
+        }
+        .skill3{
+            padding: 2%;
+            grid-row: 3;
+            grid-column: 1 / span 2;
+            font-size: 18px;
+            margin: 2% 32%;
+
+        }
+        .width{
+            max-width: 100%;
+            min-width: 100%;
+        }
+        .skillbox{
+            border: 2px solid rgb(59, 2, 102);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(158, 0, 249, 0.5);
+            /* font-size: 20px; */
+        }
+        .skillbox:hover{
+            transform: scale(1.03);
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 0 20px rgba(216, 0, 249, 0.5);
+        }
+        .smallbox{
+            border: 3px solid rgb(59, 2, 102);
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 2% 2%;
+            grid-template-columns: 1fr;
+
+        }
+        .btn1{
+            padding: 10px 30px;
+            background: linear-gradient(27deg,rgba(150, 5, 141, 1) 18%, rgba(116, 17, 214, 1) 100%);
+            font-size: 25px;
+            /* margin: 0 5%; */
+            border-radius: 10%;
+            font-weight: bolder;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        @media only screen and (max-width:1500px) {               /* screen size below 1500px */
+            .smallbox{
+                border: 3px solid rgb(59, 2, 102);
+                border-radius: 10px;
+                padding: 10px 20px;
+                /* background-color: rgb(0, 255, 26); */
+            
+                margin: 2% 2%;
+                grid-template-columns: repeat(auto-fit, minmax(5px, 1fr)); 
+                display: grid;
+          } 
+
+         } 
+        @media only screen and (max-width:600px) {               /* screen size below 600px */
+            .smallbox{
+                border: 3px solid rgb(59, 2, 102);
+                border-radius: 10px;
+                padding: 10px 20px;
+                margin: 2% 2%;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+                display: grid;
+          } 
+            .skill1{
+                margin-left: 15%;
+            }
+            .skill2{
+                grid-column: 1;
+                grid-row: 3;
+                font-size: 18px;
+                margin-left: 15%;
+                margin-top: 10%;
+                max-width: 60%;
+                min-width: 60%;
+            }
+            .skill3{
+                grid-column: 1;
+                grid-row: 4;
+                font-size: 18px;
+                margin-left: 15%;
+                margin-top: 10%;
+                max-width: 60%;
+                min-width: 60%;
+            }
+            .about1{
+                grid-column: 1;
+                grid-row: 2 ;
+                max-width: 100%;
+                margin-top: 10px;
+            
+            }
+            .about2{
+                grid-column: 1;
+                grid-row: 3;
+            }
+            .about3{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .email{
+                max-width: 100%;
+                min-width: 40%;
+                margin: 0 10%;
+                padding: 10px 20px;
+                border: 3px solid rgb(59, 2, 102);
+                border-radius: 10px;
+            }
+        
+         } 
+     
+        @media screen and (min-width: 600px) {               /* screen size above 600px */
+        
+            .email{
+                padding: 10px 50px;
+                margin: 0 22%;
+                border: 3px solid rgb(59, 2, 102);
+                border-radius: 10px;
+            }
+        }
+        @media screen and (min-width: 900px) {               /* screen size above 900px */
+        
+            .email{
+                padding: 10px 50px;
+                margin: 0 32%;
+                border: 3px solid rgb(59, 2, 102);
+                border-radius: 10px;
+            }
+        }
+        .smallbox:hover{
+            color: aqua;
+        }
+        .vision{
+            border: 3px solid rgb(59, 2, 102);
+            margin: 1% 25%;
+            padding-left: 5%;
+            padding-right: 4%;
+            font-size: 20px;
+            max-width: 50%;
+            min-width: 30%;
+            border-radius: 20px;
+            max-height: 170px;
+            overflow: hidden;
+            padding-bottom: 20px;
+            word-break: break-all;
+            text-overflow: ellipsis;
+        }
+        .vision:hover{
+            max-height: 1%;
+            box-shadow: 0 0 20px rgba(216, 0, 249, 0.5);
+        }
+        .project{
+            padding: 10px 20px;
+            background-color: black;
+            border: 3px solid rgb(59, 2, 102);
+            border-radius: 10px;
+            margin: 0 30%;
+        }
+        .project1{
+            padding: 0 10px;
+            text-decoration: none;
+            font-size: 20px;;
+        }
+        .border{
+            border-left: 3px solid rgb(59, 2, 102);
+        }
+        .project1:hover{
+            text-decoration: underline;
+        }
+
+        .email1{
+            width: 100%;
+            min-width: 100%;
+            border-radius: 10px;
+            height: 50px;
+            color: #000000;
+        }
+
+        .btn1:hover{
+            background: linear-gradient(27deg,rgba(116, 17, 214, 1) 18%, rgba(150, 5, 141, 1) 100%);
+        }
+        .footer{
+            background-color: #000000;
+            padding: 50px 0;
+            margin-bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .footer1{
+            padding: 0 50px;
+        }
+        .links{
+            padding: 0 30px;
+        }
+        .links:hover{
+            transform: scale(1.1);
+        }
+        .iam{
+            transition: 1s Slide in ;
+        }
+        .padding{
+            padding-top: 100px;
+        }
+        .imgproject{
+            max-width: 99%;
+            min-width: 99%;
+            border-radius: 20px;
+            margin-top: 3%;
+            /* border: 1px solid rgb(255, 255, 255); */
+        }
+        .imgproject:hover{
+            max-width: 100%;
+        }
+        .mywork{
+            max-width:25%;
+            min-width:25%;
+            /* max-height: 400px; */
+            overflow: auto;
+            border: 1px solid rgb(59, 2, 102);
+            background-color: rgb(8, 1, 13);
+            padding: 10px 20px;
+            margin: 50px 0;
+            border-radius: 5%;
+        }
+        /* .mywork:hover{
+            max-height: 100%;
+        } */
+    </style>
+</head>
+<body class="home1">
+    <div>
+        <nav class="nav">
+            <a class="nav1" href="#about">About</a>
+            <a class="nav1" href="#skill">Skill</a>
+            <a class="nav1" href="#visionary">Visionary</a>
+            <a class="nav1" href="#projects">Projects</a>
+            <a class="nav1" href="#education">Education</a>
+
+        </nav>
+
+        <div id="about" class="about  fontsize">
+            <div style="margin-top: 100px;" class="about3">
+                <h1>Hi,I am</h1>
+                <h1>REJIN.R.J</h1>
+                <h2>I am a <strong class="iam" id="iam"></strong></h2>
+            </div>
+
+           
+
+            <script>
+                var array = ["Web Developer.", "Full-stack Developer.", "Python Developer."];
+                var wordIndex = 0;
+                var charIndex = 0;
+                var iam = document.getElementById("iam");
+            
+                function typeEffect() {
+                    if (charIndex <= array[wordIndex].length) {
+                        iam.innerHTML = array[wordIndex].substring(0, charIndex);
+                        iam.style.color = "rgb(174, 0, 255)";
+                        charIndex++;
+                        setTimeout(typeEffect, 100); // typing speed
+                    } else {
+                        setTimeout(eraseEffect, 2000); // wait before erasing
+                    }
+                }
+            
+                function eraseEffect() {
+                    if (charIndex >= 0) {
+                        iam.innerHTML = array[wordIndex].substring(0, charIndex);
+                        charIndex--;
+                        setTimeout(eraseEffect, 50); // erase speed
+                    } else {
+                        wordIndex = (wordIndex + 1) % array.length;
+                        setTimeout(typeEffect, 500); // delay before next word
+                    }
+                }
+            
+                window.onload = function() {
+                    typeEffect();
+                };
+            </script>
+
+
+            <div class=" fontsize">
+                <p class="about2">
+                    A skilled Python-Full-Stack developer with a strong portfolio,
+                    passionate about staying updated an Frontend and Backend (Full-Stack) 
+                    tech.Collabrative and committed to quality you thrive in dynamic teams.
+                    Eager to contribute . Creativity and bring innovative ideas to life.
+                </p>
+            </div>
+        
+            <div class="about1 image-wrapper">
+                <img class="profile-pic" style="border-radius: 200%;" src="profilepic.jpg" alt="5">
+            </div>
+        </div>
+
+            <a class="nav2 btn" href="https://drive.google.com/file/d/1azWiqG23XhkEAOwrsSvmy9jXpD2WVUeD/view?usp=drive_link" target="_blank">Check Resume</a>
+        
+            <div class="padding" id="skill"></div>
+            
+            <div class="textalign fontsize" style="margin-top: 10%;">
+                <h1>Skills</h1>
+                <p>Here are some of my skills on which i have learnt.</p>
+            </div>
+
+        <div class="display textalign width">
+
+            <div class="skill1 skillbox">
+                <h2>Frontend</h2>
+                <div><br>
+                    <span class="smallbox"><img width="20px" src="html.png" alt="h"> HTML</span>
+                    <span class="smallbox"><img width="20px" src="css.png" alt="c"> CSS</span>
+                    <span class="smallbox"><img width="13px" src="js_5968292.png" alt="j"> JavaScript</span>
+                </div>
+            <br><br>
+                <div>
+                    <span class="smallbox"><img width="25px" src="bootstrap.png" alt="B"> Bootstrap</span>
+                    <span class="smallbox"><img width="15px" src="react-js.png" alt="R"> React JS</span>
+                    <span class="smallbox"><img width="18px" src="jquery.png" alt="J"> J-query</span>
+                </div><br>
+            </div>
+
+            <div class="skill2 skillbox">
+                <h2>Backend</h2>
+                <div><br>
+                    <span class="smallbox"><img width="20px" src="python.png" alt="P">&nbsp;  Python</span>
+                    <span class="smallbox"><img width="20px" src="django.png" alt="d">&nbsp; Django</span>
+                    <span class="smallbox"><img width="20px" src="sql.png" alt="S">&nbsp;  SQL</span>
+                </div>
+            </div>
+
+                <div class="skill3 skillbox">
+                    <h2>Others</h2>
+                    <div><br>
+                        <span class="smallbox"><img width="20px" src="git.png" alt="G">&nbsp;  Git</span>
+                        <span class="smallbox"><img width="20px" src="github.png" alt="G">&nbsp;  GitHub</span>
+                        <span class="smallbox"><img width="20px" src="vscode.png" alt="V">&nbsp;  VS Code</span>
+                    </div><br>
+                </div>
+             </div>
+        </div>
+        <br><br><br><br>
+        <div class="padding" id="visionary"></div>
+
+         <div class="textalign fontsize">
+             <h1>Visionary</h1>
+             <p>Launching my career:A Fresh perspective on Full-Stack <br>Engineering</p>
+         </div>
+        
+         <div class="vision">
+             <h3 class="fontsize">Personalisation</h3>
+             <p>A glimpse of my individuality</p>
+             <p>
+                As a budding React virtuoso,i'm fervently dedicated to crafting web 
+                experiences that transcend the ordinary.infusing every pixel with  
+                elegance and enchantment .My unwavering passion for unraveling int- 
+                ricate challenges fuelsmy odyssey in the realm of front-end wizardry. 
+                The prospect of harmonizing  with a dynamic ensemble,while imbibing  
+                wisdom from industry sages,thrills me as i amplify my proficiencies 
+                in this ever-mutating domain.
+             </p>
+         </div>
+         <br><br>
+        
+         <div class="vision">
+            <h3 class="fontsize">Reason to hire me</h3>
+            <p>What Sets Me Aparts</p>
+            <p>
+                 Aspiring Python full-stack Developer passionate about crafting exceptional user
+                 experiences.I bring fresh perspective,boundless ambition,and unconventional
+                 thinking to every project.My goal is to create digital magic through energetic,
+                 innovative work.Let's connect and embark on a journey to bring unique,
+                 ambitious and engaging experiences to life.
+            </p>
+         </div>
+         <br><br><br><br>
+
+            <div class="padding" id="projects"></div>
+        
+         <div class="textalign fontsize">
+             <h1>Projects</h1>
+             <p>i have worked on a wide range of projects.From web apps to <br>android apps.Here are some of my projects.</p>
+         </div>
+        
+         <!-- <div class="textalign project">
+             <a class="project1" href="">All</a>
+             <a class="project1 border" href="">WEBSITE</a>
+             <a class="project1 border" href="">WEB-APPS</a>
+             <a class="project1 border" href="">LANDING PAGE</a>
+         </div> -->
+
+         <div style="display: flex;justify-content: space-evenly;flex-wrap: wrap;">
+
+            <div class="mywork">
+                <!-- enter your projects here -->
+               <div class="textalign">
+                    <img width="100%" class="imgproject" src="scope.png" alt="1">
+               </div>
+               <p>HTML , CSS , JAVA-SCRIPT , PYTHON(Django).</p>
+               <h2>Scope India Educational Website </h2>
+               <p>2025</p>
+               <p>
+                   The website features a user-friendly interface and modern design for easy
+                   navigation. Developed with HTML, CSS, JavaScript, Bootstrap, Python, Django
+                   and MYSQL, the project ensures a robust platform for an enhanced user experience.
+               </p>
+               <a class="btn1" target="_blank" href="https://github.com/Rejin007/scope-project">GET CODE</a>
+               <a class="btn1" href="">MY Project</a><br><br>
+            </div>
+            
+            <div class="mywork">
+                <!-- enter your projects here -->
+               <div class="textalign">
+                    <img width="100%" class="imgproject" src="shoppingsite.png" alt="1">
+               </div>
+               <p>HTML , CSS , JAVA-SCRIPT , PYTHON(Django).</p>
+               <h2>E Commercial Shopping Website </h2>
+               <p>2025</p>
+               <p>
+                   The website features a user-friendly interface and modern design for easy
+                   navigation. Developed with HTML, CSS, JavaScript, Python, Django
+                   and MYSQL, the project ensures a robust platform for an enhanced user experience.
+               </p>
+               <a class="btn1" target="_blank" href="https://github.com/Rejin007/rjr_store">GET CODE</a>
+               <a class="btn1" href="">MY Project</a><br><br>
+            </div>
+            
+        </div>
+
+            <div class="padding" id="education"></div>
+
+         <div class="textalign fontsize">
+            <h1>Education</h1>
+            <p>My education has been a journey of self-discovery and growth. <br>My educational details are as follows.</p>  
+         </div>
+
+         <div class="vision">
+            <h3>Scope India</h3>
+            <p>Python-Full-Stack</p>
+            <p>2024-2025</p>
+            <p><strong>GRADE : </strong>90%</p>
+            <p>
+                With a comprehensive Python-Full-Stack development course under my belt,i've 
+                cultivated expertie in HTML,CSS,JavaScript,React JS,Python,Django and SQL.
+                this educational journey has empowered me to craft visually captivating,
+                responsive websites and dunamic web applications.Complementing this, i've
+                refined my ablities through hands-on projects using React JS and Django,a 
+                powerful tool for contemporary web development,These experiences have
+                enriched my understanding of the full-stack development,igniting my passion
+                to design user-centric and captivating digital solutions.
+            </p>
+
+         </div>
+
+         <div class="vision">
+            <h3>Sree Krishna Pollytechnic College Nagarcoil</h3>
+            <p>Diploma in Mechanical Engineering</p>
+            <p>2020-2022</p>
+            <p><strong>GRADE:</strong>89%</p>
+            <p>
+                My diploma in Mechanical Engineering has equipped me with a solid foundation
+                in engineering principles and practices. This educational journey has honed my
+                analytical and problem-solving skills, enabling me to approach challenges with
+                a systematic mindset. The hands-on experience gained during this program has
+                fostered my ability to work collaboratively in teams, enhancing my communication
+                and interpersonal skills. This background has instilled in me a strong work ethic
+                and a commitment to excellence, which I carry into my endeavors as a developer.
+         </div>
+
+         <div class="vision">
+            <h3>Samuel LMS Higher Secondary School Cheruvarakonam</h3>
+            <p>HSC-XII (std:+2) (biology science)</p>
+            <p>2018-2020</p>
+            <p><strong>GRADE : </strong>60%</p>
+            <p>
+                I've embraced a dynamic academic journey.My studies have fostered critical
+                thinking and a thirst for knowledge.Through my dedication and adaptability,
+                i've honed essential skills that that transcend disciplines,preparing me for 
+                future challenges and opportunities.
+            </p>
+         </div>
+
+         <div class="vision">
+            <h3>Evans High School Parassala</h3>
+            <p>SSLC - X (std:10th)</p>
+            <p>2017-2018</p>
+            <p><strong>GRADE : </strong>86%</p>
+            <p>
+                I embarked on my educational journey with enthusiasn.This pivotal Year
+                instilled in me a strong foundation in essential subjects and time management.
+                It was a crucial step towards my academic and personal development,preparing 
+                me for the road ahead.
+            </p>
+         </div>
+         <br><br><br>
+
+         <div class="textalign fontsize">
+            <h1>Contact</h1>
+            <p>Feel free to reach out to me for any questions or opportunities!</p>
+        </div>
+
+        <form  onsubmit="sendEmail()" class="email textalign">
+            <h3 style="font-size: 35px;" class="">Email Me</h3>
+            <input id="userEmail" class="email1 fontsize textalign" type="email" placeholder="your email" name="users" required><br><br>
+            <input id="userName" class="email1 fontsize textalign" type="text" placeholder="your name" required><br><br>
+            <input id="emailSubject"  class="email1 fontsize textalign" type="text" placeholder="Subject" required><br><br>
+            <input id="emailBody" class="email1 fontsize textalign" type="text" placeholder="Message" required><br><br>
+            <br><br>
+            <input type="submit" class="btn1">
+            <br><br>
+        </form>
+
+        <script>
+            function sendEmail() {
+                const email = document.getElementById("userEmail").value;
+                const name = document.getElementById("userName").value;
+                const subject = document.getElementById("emailSubject").value;
+                const body = document.getElementById("emailBody").value;
+        
+                const mailtoLink = `mailto:rejinrjr144@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage: " + body)}`;
+        
+                window.location.href = mailtoLink;
+            }
+        </script>
+        
+<br><br><br><br><br><br><br>
+             <footer class="footer textalign fontsize">
+                <h2 style="color: rgb(174, 0, 255);">REJIN.R.J</h2>
+
+                <nav>
+                    <a class="nav1 footer1" href="#about">About</a>
+                    <a class="nav1 footer1"  href="#skill">Skill</a>
+                    <a class="nav1 footer1"  href="#visionary">Visionary</a>
+                    <a class="nav1 footer1"  href="#projects">Projects</a>
+                    <a class="nav1 footer1"  href="#education">Education</a>
+                </nav>
+                <br><br>
+                <nav>
+                    <a target="_blank" href="tel:+91 8590471041"><img class="links"  title="click here to contact" width="40px" src="phone_11672755.png" alt="phone"></a>
+                    <a target="_blank" href="mailto:rejinrjr144@gmail.com"><img class="links"  title="click here to mail" width="40px" src="envelope_9073328.png" alt="mail"></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/rejin-r-j-6a89a72a7/"><img class="links"  title="click here to linked_in" width="40px" src="linkedin_3536505.png" alt="linkedin"></a>
+                    <a target="_blank" href="https://www.instagram.com/spidy_00070/"><img class="links"  title="click here to instagram" width="40px" src="instagram_15713420.png" alt="instagram"></a>
+                    <a target="_blank" href="https://wa.me/918590471041"><img class="links"  title="click here to whatsapp" width="40px" src="whatsapp_5968841.png" alt="whatsapp"></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UC0kxgTmXsytD4b5jJu2zY7g"><img class="links"  title="click here to Youtube" width="40px" src="youtube_1384060.png" alt="whatsapp"></a>
+                </nav>
+                <br><br>
+                <div>
+                    <p>Elevating the Digital Experience !</p>
+                </div>
+             </footer>
+    </div>
+</body>
+</html>
